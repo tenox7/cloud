@@ -120,6 +120,9 @@ case $1 in
         pip3 install -U botocore
         pip3 install -U awscli
         ;;
+    addkey)
+       aws ec2 import-key-pair --key-name $key --public-key-material $1
+       ;;
     config)
         aws configure
         ;;
